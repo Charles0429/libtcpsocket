@@ -156,6 +156,9 @@ int tcp_client_socket(const char *host, const char *service,
     {
         return -1;
     }
+
+    res_save = res;
+
     do
     {
         socket_fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
