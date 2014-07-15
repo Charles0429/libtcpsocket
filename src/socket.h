@@ -21,6 +21,7 @@ int tcp_server_socket(const char *host, const char *service,
 int tcp_client_socket(const char *host, const char *service,
                       struct sockaddr *server_addr, int *addr_len);
 int set_socket_reuseaddr(int socket_fd);
+int set_socket_nonblocking(int socket_fd);
 int tcp_server_bind(int socket_fd, const struct sockaddr *addr,
                     int addr_len);
 int tcp_server_listen(int socket_fd, int backlog);

@@ -197,6 +197,15 @@ int set_socket_reuseaddr(int socket_fd)
     return socket_fd;
 }
 
+int set_socket_nonblocking(int socket_fd)
+{
+    if(fcntl(socket_fd, F_SETFL, O_NONBLOCK) == -1)
+    {
+        return -1;
+    }
+    return socket_fd;
+}
+
 /**
  * bind a socket fd 
  */
